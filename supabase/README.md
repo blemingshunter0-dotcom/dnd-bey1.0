@@ -31,6 +31,24 @@ The `guard_admin_flag` trigger blocks a logged-in non-admin from doing this from
 the app, but allows it from the SQL Editor (service-role context). This is the only
 manual admin step.
 
+## Edge Function: `accept-invite`
+
+The invite-link flow needs one server-side function (the recipient has no account
+yet, so account creation must run with the service role):
+
+```bash
+supabase functions deploy accept-invite
+```
+
+`SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are injected automatically — no
+manual secrets needed. The client calls it with the anon key (a valid JWT), so the
+default `verify_jwt` setting is fine.
+
+**Invite flow:** an admin creates an invite row from the app (RLS lets only global
+admins insert), shares the generated `/invite/<token>` link; the recipient sets a
+display name + password, the function validates the token and creates the account,
+then the app signs them in.
+
 ## What `0001_initial_schema.sql` sets up
 
 - **Identity:** `profiles` (auto-created on signup via trigger), `invites`.

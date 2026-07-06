@@ -46,4 +46,18 @@
   .rule-ornament {
     @apply my-6 h-px w-full bg-gradient-to-r from-transparent via-gold-500/40 to-transparent;
   }
+  /* Form field label */
+  .label {
+    @apply mb-1 block font-display text-xs uppercase tracking-widest text-parchment-300;
+  }
+  /* Text input */
+  .input {
+    @apply w-full rounded-sm border border-gold-500/25 bg-ink-950/60 px-3 py-2 text-parchment-100
+      shadow-recessed placeholder:text-parchment-300/40
+      focus:border-gold-400/60 focus:outline-none focus:ring-1 focus:ring-gold-400/40;
+  }
+  /* Inline form error */
+  .form-error {
+    @apply rounded-sm border border-blood-500/50 bg-blood-700/30 px-3 py-2 text-sm text-parchment-100;
+  }
 }
