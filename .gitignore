@@ -2,6 +2,11 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# TypeScript build artifacts (from `tsc -b`)
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
 .env
 .env.*
 !.env.example
