@@ -258,15 +258,24 @@ Mirrors the spec's suggested order. Each stage ends at a reviewable checkpoint.
 
 ---
 
-## 7. Open questions for Hunter (non-blocking; can default)
+## 7. Decisions & remaining questions
 
-1. **The "Batman dashboard" precedent** — if it uses a specific stack/design system, share it and
-   I'll align visual conventions. (Default: clean Tailwind UI.)
-2. **Portrait uploads** — Supabase Storage (default) is fine, or link out like documents. Default: Storage.
-3. **SRD source file** — I'll pull the SRD 5.2 CC-BY-4.0 data; confirm you're OK with me sourcing the
-   openly-licensed dataset for seeding. (No proprietary text will be included.)
-4. **Invite mechanism** — email-link invite vs. Hunter manually creating accounts. Default: Hunter
-   generates invite links; simplest for a group of 4.
+**Decided:**
+- **Visual design:** custom **gothic fantasy** theme (dark parchment/candlelit palette, serif display
+  type, ornamental framing) — *not* modeled on the group's Batman dashboard. Design tokens live in
+  Tailwind config so the whole app stays consistent.
+- **Invite mechanism:** **invite links** — Hunter generates a link/token that creates an account on
+  acceptance. No public signup.
+
+**Non-blocking, can default:**
+1. **Portrait uploads** — Supabase Storage (default) vs. link out like documents. Default: Storage.
+2. **SRD source file** — I'll pull the SRD 5.2 CC-BY-4.0 dataset for seeding. (No proprietary text included.)
+
+## 7a. Usage-budget working agreement
+
+To avoid getting stranded mid-build against Claude usage limits, every turn ends at a
+**committed, working checkpoint**: the repo always builds and deploys. Large stages are split
+into smaller reviewable slices. Stopping after any turn loses no committed work.
 
 ---
 
